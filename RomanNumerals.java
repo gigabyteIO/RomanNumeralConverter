@@ -3,6 +3,10 @@ import java.util.Scanner;
 /**
  * This class represents Roman Numerals. 
  * Each numeral has an Arabic value and a Roman value.
+ * There are two constructors, one accepts an arabic numeral and converts it to a roman numeral.
+ * The other accepts a roman numeral and converts it to an arabic numeral.
+ * Arabic values must be between 1 and 3999 inclusive. 
+ * The user ends the program by entering an empty line. 
  * @author martin
  *
  */
@@ -199,16 +203,13 @@ public class RomanNumerals {
 	 * @return the Arabic numeral as an integer.
 	 */
 	private int romanToArabic(String roman) {
-		int arabic = 0;
-		
+		int arabic = 0;		
 		int pos = 0;
-		while(pos < roman.length()) {
-			
+		while(pos < roman.length()) {		
 			char letter = roman.charAt(pos);
 			RomanNumeral number = letterToNumeral(Character.toString(letter));
 			
-			pos++;
-			
+			pos++;		
 			if(pos == roman.length())
 				arabic += number.getValue();
 			else {		
@@ -219,10 +220,8 @@ public class RomanNumerals {
 				}
 				else
 					arabic += number.getValue();
-			}
-			
-		}
-		
+			}	
+		}	
 		return arabic;
 	}
 	
